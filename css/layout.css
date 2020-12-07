@@ -1,0 +1,44 @@
+.bgModal{
+    width:              99%;
+    height:             99%;
+    position:           absolute;
+    z-index:            0;
+    background-color:   #f0f8ff59;
+}
+
+.modal{
+    margin:             15em 40%;
+    display:            grid;
+}
+
+.txtCenter{
+    text-align:         center;
+    text-align:         -webkit-center;
+}
+
+.inputURL{
+    width:              50%;
+    height:             2em;
+}
+
+.button{
+    box-shadow:         2px 2px 0px 1px #525252;
+    border:             1px black solid;
+    display:            inline-block;
+    width:              5em;
+    height:             1.5em;
+}
+
+/*-------------- Display ---------------*/
+.none{
+    display:            none;
+}
+
+.block{
+    display:            block;
+}
+
+/*-------------- Margin ---------------*/
+.marginBottom0_5em{
+    margin-bottom:      0.5em;
+}
