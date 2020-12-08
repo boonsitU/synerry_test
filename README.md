@@ -8,5 +8,5 @@ Database ที่ใช้คือชื่อ synerry ส่วนชื่�
   - domain_name(varchar(2083))  Collation เป็น utf8_general_ci
   - short_name(varchar(2083))   Collation เป็น utf8_general_ci
   
-ส่วนเรื่อง Username ที่ใช้ในการ connect Databse เป็น root
+ส่วนเรื่อง Username ที่ใช้ในการ connect Databse เป็น root และ
 Password ที่ใช้ในการ connect Databse เป็น ""
