@@ -1,7 +1,8 @@
 # synerry_test
 Test Web Developer
 
-โปรแกรมที่ Xampp 
+โปรแกรมที่ Xampp
+
 PHP ที่ใช้เวอร์ชั่น 7.3.25
 
 Database ที่ใช้คือชื่อ synerry ส่วนชื่อของ Table ใช้เป็นชื่อ linkurl
