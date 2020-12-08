@@ -1,7 +1,7 @@
 # synerry_test
 Test Web Developer
 
-โปรแกรมที่ Xampp
+โปรแกรมที่ใช้ Xampp
 
 PHP ที่ใช้เวอร์ชั่น 7.3.25
 
