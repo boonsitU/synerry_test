@@ -1,37 +1,33 @@
 <html>
   <head>
-    <script src="./javascript/request.js"></script>
-    <script src="./javascript/action.js"></script>
-    <script src="./javascript/qrcode.min.js"></script>
+    <script src="./js/request.js"></script>
+    <script src="./js/action.js"></script>
+    <script src="./js/onload.js"></script>
+    <script src="./js/qrcode.min.js"></script>
 
     <link rel="stylesheet" href="./css/layout.css">
     <link rel="stylesheet" href="./css/font.css">
   </head>
-  <body>
+  <body id="body" onload="getData()">
     <div id="bgModal" class="none bgModal">
       <div id="Modal" class="txtCenter modal">
-          <div id="stortURL" class="fs1_5em marginBottom0_5em"></div>
+          <div id="stortURL" class="fs1_5em marginBottom0_5em colorSemiWhite"></div>
           <div id="qrcode" class="marginBottom0_5em"></div>
-          <button onclick="changeClassList('bgModal' , 'remove' , 'block')">OK</button>
+          <button onclick="closeModal()">OK</button>
       </div>
     </div>
 
     <h1 class="message txtCenter">Shorten your first link!</h1>
       <div class="txtCenter">
-        <!-- <div> -->
-          <!-- <div>https://</div> -->
-          <input name="text" class="inputURL fs0_8em apple-system" type="url" value  id="linkinput" placeholder="Paste a URL to shorten">
-      <!-- </div> -->
+          <input name="text" class="inputURL fs0_8em apple-system" type="url" id="linkinput" placeholder="Paste a URL to shorten">
           <div id="btnShorten" class="button fs0_9em apple-system" onclick="generateShortURL('linkinput')">Shorten</div>
       </div>
     <p id="message"></p>
 
-    <script>
-      // sendData()
-      // async function sendData(){
-      //     let data = await reqParam("shortURL")
-      //     console.log("data : " , data)
-      // }
-    </script>
+    <table id="table" class="bdCollapse marginAuto">
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+    </table>
+
   </body>
 </html>

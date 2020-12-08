@@ -1,5 +1,3 @@
-// Bunyasit Uasopon (BOY) 10191
-
 const HOST =    {
                     "HOST_SHORT_URL" : "https://api.rebrandly.com/v1/links" ,
                 }
@@ -16,30 +14,45 @@ function reqParam(obj_data){
 
         url     = HOST.HOST_SHORT_URL
         data    = JSON.stringify({
-                                    // 'destination': 'https://www.youtube.com/channel/UCHK4HD0ltu1-I212icLPt3g'    ,
-                                    // 'domain'     : {fullName: "rebrand.ly"}
                                     'destination': linkURL    ,
-                                    // 'domain'     : {fullName: "rebrand.ly"}
                                  })
+    }
+    else if(obj_data.type === "insert"){
+        url     = "connect.php?"
+        data    = "type=" + obj_data.type +"&domain=" + obj_data.domain_name + "&shortURL=" + obj_data.shortURL
+    }
+    else if(obj_data.type === "getData"){
+        url     = "connect.php?"
+        data    = "type=" + obj_data.type
     }
 
     return new Promise(function(resolve, reject) 
     {
         var xhr = new XMLHttpRequest();
-        
         xhr.open(method , url)
-        //Send the proper header information along with the request
-        // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhr.setRequestHeader('Content-type', 'application/json');
-        xhr.setRequestHeader('apikey', 'a2754c2cfed049a794fc362f379e22fc');
+        if(obj_data.type === "shortURL"){
+            xhr.setRequestHeader('Content-type', 'application/json');
+            xhr.setRequestHeader('apikey', 'a2754c2cfed049a794fc362f379e22fc');
+            xhr.responseType = 'json';
+        }
+        else{
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        }
     
-    xhr.responseType = 'json';
     xhr.onreadystatechange = function(e) {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
-                resolve(xhr.response)
+                if(obj_data.type === "shortURL"){
+                    resolve(xhr.response)
+                }else{
+                    resolve(xhr.responseText)
+                }
             } else {
-                console.log("BREAK Status: "+ xhr.response)
+                if(obj_data.type === "shortURL"){
+                    console.log("BREAK Status: "+ xhr.response)
+                }else{
+                    console.log("BREAK Status: "+ xhr.responseText)
+                }
                 reject("BREAK Status: "+ xhr.status)
             }
         }
@@ -55,9 +68,6 @@ function checkURL(data , checkstr){
     let boolURL = data.includes(checkstr)
     let url     = data
     if(boolURL === false){
-        // if(checkstr === 'www.' && data.includes('https://'))
-        //     url = 
-        // else
             url = checkstr + url
     }
     return url

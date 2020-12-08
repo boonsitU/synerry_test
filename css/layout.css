@@ -3,7 +3,7 @@
     height:             99%;
     position:           absolute;
     z-index:            0;
-    background-color:   #f0f8ff59;
+    background-color:   #434444de;
 }
 
 .modal{
@@ -27,6 +27,17 @@
     display:            inline-block;
     width:              5em;
     height:             1.5em;
+    cursor:             pointer;
+}
+
+.QRCode{
+    width:              10em;
+    height:             10em
+}
+
+.colorTH{
+    background-color:    #5a5a5a;
+    color:               #ffffff;
 }
 
 /*-------------- Display ---------------*/
@@ -38,7 +49,97 @@
     display:            block;
 }
 
+/*-------------- Padding ---------------*/
+.padding1X0_5Y{
+    padding:            0.5em 1em;
+}
+
 /*-------------- Margin ---------------*/
+.marginAuto{
+    margin:             auto;
+}
+
 .marginBottom0_5em{
     margin-bottom:      0.5em;
 }
+
+/*-------------- Border ---------------*/
+.bd1px{
+    border:             1px solid black;
+}
+
+.bdCollapse{
+    border-collapse:    collapse;
+}
+
+/*------------- Overflow -------------*/
+.overflowY_hidden{
+    overflow-y:         hidden;
+}
+
+/*------------- color ----------------*/
+.colorSemiWhite{
+    color:              #ece6e6;
+}
+
+/*------------ switch toggle -----------------*/
+.switch {
+    position:           relative;
+    display:            inline-block;
+    width:              60px;
+    height:             34px;
+    float:              right;
+}
+  
+  .switch input { 
+    opacity:            0;
+    width:              0;
+    height:             0;
+  }
+  
+  .slider {
+    position:           absolute;
+    cursor:             pointer;
+    top:                0;
+    left:               0;
+    right:              0;
+    bottom:             0;
+    background-color:    #ccc;
+    -webkit-transition: .4s;
+    transition:         .4s;
+  }
+  
+  .slider:before {
+    position:           absolute;
+    content:            "";
+    height:             26px;
+    width:              26px;
+    left:               4px;
+    bottom:             4px;
+    background-color:   white;
+    -webkit-transition: .4s;
+    transition:         .4s;
+  }
+  
+  input:checked + .slider {
+    background-color:   #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow:         0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform:  translateX(26px);
+    -ms-transform:      translateX(26px);
+    transform:          translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius:      34px;
+  }
+  
+  .slider.round:before {
+    border-radius:      50%;
+  }
